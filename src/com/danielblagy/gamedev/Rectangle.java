@@ -16,7 +16,7 @@ public class Rectangle extends GameObject {
 	}
 
 	@Override
-	public void update() {
+	public void update(double delta) {
 		System.out.println("Rectangle update!");
 	}
 

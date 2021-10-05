@@ -16,5 +16,5 @@ public abstract class GameObject {
 	
 	public abstract void draw(Graphics2D g);
 	
-	public abstract void update();
+	public abstract void update(double delta);
 }
