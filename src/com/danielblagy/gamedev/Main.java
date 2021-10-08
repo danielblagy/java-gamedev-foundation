@@ -27,9 +27,17 @@ public class Main {
 			previousTime = currentTime;
 			
 			deltaDisplay.update(delta);
-			if (gameWindow.keyboardInput.wasKeyStroked(KeyEvent.VK_F))
+			
+			gameWindow.update();
+			
+			if (gameWindow.keyboardInput.isKeyPressed(KeyEvent.VK_F))
 				System.out.println("Fire!");
-			gameWindow.renderScene();
+			
+			if (gameWindow.keyboardInput.isKeyPressedOnce(KeyEvent.VK_A))
+				System.out.println("has been pressed!");
+			
+			if (gameWindow.keyboardInput.isKeyReleased(KeyEvent.VK_A))
+				System.out.println("has been released!");
 		}
 		
 		// release game resources, save state, etc.

@@ -46,7 +46,11 @@ public class Window extends JFrame {
 		setVisible(true);
 	}
 	
-	public void renderScene() {
+	public void update() {
+
+		// input handling
+		keyboardInput.update();
+		
 		// clear
 		graphics.setColor(clearColor);
 		graphics.fillRect(0, 0, getWidth(), getHeight());
