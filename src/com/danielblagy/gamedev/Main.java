@@ -1,6 +1,7 @@
 package com.danielblagy.gamedev;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 public class Main {
@@ -30,6 +31,10 @@ public class Main {
 			
 			gameWindow.update();
 			
+			if (gameWindow.mouseInput.getButton(3).pressedOnce) {
+				System.out.println("Safety off!");
+			}
+			
 			if (gameWindow.keyboardInput.isKeyPressed(KeyEvent.VK_F))
 				System.out.println("Fire!");
 			
@@ -38,6 +43,26 @@ public class Main {
 			
 			if (gameWindow.keyboardInput.isKeyReleased(KeyEvent.VK_A))
 				System.out.println("has been released!");
+			
+			
+			if (gameWindow.mouseInput.getButton(3).pressed) {
+				System.out.println("Shooting!");
+			}
+			
+			if (gameWindow.mouseInput.getButton(3).released) {
+				System.out.println("Reloading!");
+			}
+			
+			if (gameWindow.mouseInput.getButton(1).clicked) {
+				System.out.println("Shields up!");
+			}
+			
+			if (gameWindow.mouseInput.getWheel() != null) {
+				System.out.println("Scrolling!");
+			}
+			
+			Point mousePosition = gameWindow.mouseInput.getPosition();
+			//System.out.println(mousePosition.x + ", " + mousePosition.y);
 		}
 		
 		// release game resources, save state, etc.

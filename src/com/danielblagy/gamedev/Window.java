@@ -24,12 +24,19 @@ public class Window extends JFrame {
 	
 	public KeyboardInput keyboardInput;
 	
+	public MouseInput mouseInput;
+	
 	
 	public Window(int width, int height, String title, Color clearColor) {
 		this.clearColor = clearColor;
 		
 		keyboardInput = new KeyboardInput();
 		addKeyListener(keyboardInput);
+		
+		mouseInput = new MouseInput();
+		addMouseListener(mouseInput);
+		addMouseMotionListener(mouseInput);
+		addMouseWheelListener(mouseInput);
 		
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         graphics = image.createGraphics();
@@ -50,6 +57,7 @@ public class Window extends JFrame {
 
 		// input handling
 		keyboardInput.update();
+		mouseInput.update();
 		
 		// clear
 		graphics.setColor(clearColor);
