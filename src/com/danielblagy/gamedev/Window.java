@@ -26,6 +26,8 @@ public class Window extends JFrame {
 	
 	public MouseInput mouseInput;
 	
+	public Camera camera = null;
+	
 	
 	public Window(int width, int height, String title, Color clearColor) {
 		this.clearColor = clearColor;
@@ -51,6 +53,8 @@ public class Window extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
+		
+		camera = new Camera(0, 0, getWidth(), getHeight(), this);
 	}
 	
 	public void update() {
@@ -65,7 +69,7 @@ public class Window extends JFrame {
 		
 		// render the scene
 		for (GameObject gameObject : scene) {
-			gameObject.draw(graphics);
+			gameObject.draw(graphics, camera);
 		}
 				
 		// commit render

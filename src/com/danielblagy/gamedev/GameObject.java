@@ -14,7 +14,7 @@ public abstract class GameObject {
 		this.height = height;
 	}
 	
-	public abstract void draw(Graphics2D g);
+	public abstract void draw(Graphics2D g, Camera camera);
 	
 	public abstract void update(double delta);
 }

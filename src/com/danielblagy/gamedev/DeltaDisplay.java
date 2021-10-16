@@ -14,7 +14,7 @@ public class DeltaDisplay extends GameObject {
 	}
 
 	@Override
-	public void draw(Graphics2D g) {
+	public void draw(Graphics2D g, Camera camera) {
 		g.setColor(Color.magenta);
 		g.drawString(Integer.toString(fps), x, y);
 	}
